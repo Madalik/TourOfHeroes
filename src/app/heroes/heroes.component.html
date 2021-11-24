@@ -1,13 +1,22 @@
-<h2>My Heroes</h2>
-
-<ul class="heroes">
-  <li *ngFor="let hero of heroes"
-  [class.selected] = "hero === selectedHero"
-  (click)="onSelected(hero)">
-    <span class="badge">{{ hero.id }}</span
-    >{{ hero.name }}
-  </li>
-</ul>
+<thead>
+  <tr>
+    <th>Heroes List</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <ul class="heroes">
+      <li
+        *ngFor="let hero of heroes"
+        [class.selected]="hero === selectedHero"
+        (click)="onSelected(hero)"
+      >
+        <span class="badge">{{ hero.id }}</span
+        >{{ hero.name }}
+      </li>
+    </ul>
+  </tr>
+</tbody>
 <app-hero-detail [hero]="selectedHero"></app-hero-detail>
 
 <!-- <div *ngIf="selectedHero">
